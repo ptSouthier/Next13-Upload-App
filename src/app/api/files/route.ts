@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
   const breakpointRegex = /[\r\n]+/;
   const dataValues: string[] = typeof dataToObject.file === 'string' ? dataToObject.file.split(breakpointRegex) : [];
-  const headerColumns = dataValues.shift();
+  const headerColumns = dataValues.shift()?.split(',');
 
   console.log(dataValues);  
   return NextResponse.json({ formData })
