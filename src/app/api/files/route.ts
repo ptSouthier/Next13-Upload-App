@@ -13,6 +13,7 @@ export async function POST(request: Request) {
   const dataValues: string[] = typeof dataToObject.file === 'string' ? dataToObject.file.split(breakpointRegex) : [];
   const headerColumns = dataValues.shift()?.split(',');
 
-  console.log(dataValues);  
+  console.log(headerColumns);
+  console.log(dataValues);
   return NextResponse.json({ formData })
 }
