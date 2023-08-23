@@ -15,7 +15,5 @@ export async function POST(request: Request) {
 
   if (headerColumns !== expectedHeaders) return NextResponse.json({ error: 'Bad Request: CSV file header is incorrect!' }, { status: 400 })
 
-  console.log(headerColumns);
-  console.log(dataValues);
   return NextResponse.json({ formData })
 }
