@@ -11,7 +11,6 @@ export async function POST(request: Request) {
 
   const breakpointRegex = /[\r\n]+/;
   const dataValues: string[] = typeof dataToObject.file === 'string' ? dataToObject.file.split(breakpointRegex) : [];
-  const expectedHeaders = [ 'name', 'city', 'country', 'favorite_sport' ]
   const headerColumns = dataValues.shift()?.split(',');
 
   if (headerColumns !== expectedHeaders) return NextResponse.json({ error: 'Bad Request: CSV file header is incorrect!' }, { status: 400 })
